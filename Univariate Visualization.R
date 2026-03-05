@@ -1,5 +1,5 @@
 # Day 4 Univariate Visualization
-table(HINTSData_2020_clean$QualityCare)
+table(HINTSData_2020_clean)
 
 # Part I. 
 # 1) Bar plot for QualityCare
