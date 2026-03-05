@@ -61,29 +61,29 @@ ggplot(df, aes(y = as.numeric(V14))) +
 my_visual_func_I <- function(data) {
   
   # Barplot for QualityCare
-  barplot(table(data$QualityCare),
+  barplot(table(HINTSData_2020_clean$V3),
           main = "Distribution of QualityCare",
           xlab = "QualityCare",
           ylab = "Frequency")
   
   # Pie chart for RaceEthn5
-  pie(table(data$RaceEthn5),
+  pie(table(HINTSData_2020_clean$V12),
       main = "Distribution of RaceEthn5")
 }
 my_visual_func_I(HINTSData_2020_clean)
+
 
     # Function for Part II
 my_visual_func_II <- function(data) {
   
   # Histogram for Age
-  hist(data$Age,
+  hist(as.numeric(data$V5),
        main = "Distribution of Age",
        xlab = "Age")
   
   # Boxplot for BMI
-  boxplot(data$BMI,
+  boxplot(as.numeric(data$V14),
           main = "Distribution of BMI",
           ylab = "BMI")
-  
 }
 my_visual_func_II(HINTSData_2020_clean)
