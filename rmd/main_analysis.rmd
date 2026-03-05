@@ -28,21 +28,64 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-
-
 ## Day 1
 
 #Team names: Abril, Kevin, Kylize
 
 ## Day 2
+
 #imported HINTSData into R
 
-rel.data <- HINTSData_2020_clean[, c(5,17,16,14,3,6,15,12)] #created subset of relevant data only
+rel.data \<- HINTSData_2020_clean[, c(5,17,16,14,3,6,15,12)] #created subset of relevant data only
 
 ## Day 3 Descriptive Analysis & Function Writing
+
 # B Descriptive Analysis
+
 ## 1. Statistical Summaries
 
 ## Statistical Summaries: Age
 
+## Day 4 Univariate Visualization
 
+1.  Distribution of Quality Care
+
+    ![](http://127.0.0.1:22946/graphics/d8b84daf-8e43-4004-b1ec-5c6114b0f0ce.png)
+
+    Distribution of RaceEthn5
+
+    ![](http://127.0.0.1:22946/graphics/2e72fa78-1d65-46bf-8c75-45855a8580bf.png)
+
+2.  Distribution of Age
+
+    ![](http://127.0.0.1:22946/graphics/29026c8e-6025-48e2-a403-8d69ac347782.png)
+
+    Distribution of BMI
+
+    ![](http://127.0.0.1:22946/graphics/c6a0d053-95e7-462c-8056-88ea449ee866.png)
+
+3.  Distribution of Quality Care (ggplot2)
+
+    ![](http://127.0.0.1:22946/graphics/4fce6343-cca7-4fb8-8f3a-dfdd1f256fbd.png)
+
+    Distribution of RaceEthn5 (ggplot2)
+
+    ![](http://127.0.0.1:22946/graphics/70bed6b1-3756-4c0b-9dee-a63ac933dc2f.png)
+
+4.  Distribution of Age (ggplot2)
+
+    ![](http://127.0.0.1:22946/graphics/4617c679-fbbb-4c75-9dbe-a871b2cb6d28.png)
+
+    Distribution of BMI (ggplot2\_
+
+![](http://127.0.0.1:22946/graphics/87409dbe-329f-4531-bafe-55f4facfc7cd.png)
+
+5.  
+
+```         
+my_visual_func_I(HINTSData_2020_clean)
+```
+
+```         
+> my_visual_func_II(HINTSData_2020_clean)
+```
