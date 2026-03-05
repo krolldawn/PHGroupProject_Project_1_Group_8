@@ -6,11 +6,14 @@ table(HINTSData_2020_clean$QualityCare)
 barplot(table(HINTSData_2020_clean$V3),
         main = "Distribution of QualityCare",
         xlab = "QualityCare",
-        ylab = "Frequency")
+        ylab = "Frequency",
+        col = "purple4")
       
 # 2) Pie chart for RaceEthn5
 pie(table(HINTSData_2020_clean$V12),
-        main = "Distribution of RaceEthn5")
+        main = "Distribution of RaceEthn5",
+    col = c("steelblue", "purple3", "red3", "seagreen", "orange1", "skyblue"))
+
 # Part II.         
 # 3) Histogram for Age
 hist(HINTSData_2020_clean$V5,
