@@ -191,3 +191,60 @@ my_visual_func_I(HINTSData_2020_clean)
 ```         
 > my_visual_func_II(HINTSData_2020_clean)
 ```
+#runs summary of variables in the data set
+summary(rel.data) 
+
+#stores results in a new name
+summary.data <- summary(rel.data) 
+
+#loads current packages 
+(.packages()) 
+
+#converts V5 to numerics 
+rel.data$V5 <- as.numeric(as.character(rel.data$V5)) 
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V5) 
+
+#calculates mean on V5
+mean(rel.data$V5, na.rm = TRUE) 
+
+#calculates sd of V5
+sd(rel.data$V5, na.rm = TRUE) 
+
+#calculates variance of V5
+var(rel.data$V5, na.rm = TRUE) 
+
+#downloads the dplyr package
+install.packages("dplyr") 
+
+#loads the dyplr package 
+library(dplyr) 
+
+#prints our team dataset
+rel.data 
+
+#separates smoking status from dataset
+mutate(V5 = as.numeric(as.character(V5))) %>% #creates variables for V5 numeric conversion
+group_by(SmokingStatus) %>% 
+
+#creates summary stats that give the same output as B1
+summarise(mean_V5 = mean(V5, na.rm = TRUE),
+          sd_V5   = sd(V5, na.rm = TRUE),
+          var_V5  = var(V5, na.rm = TRUE),
+          n       = sum(!is.na(V5)))
+
+#installs the skimr package
+install.packages("skimr") 
+
+#loads skimr package
+library("skimr") 
+
+#outputs a statistical summary of data set 
+skim(rel.data) 
+
+#outputs grouped summary
+my_summary_func 
