@@ -48,20 +48,125 @@ rel.data
 
 ## 1. Statistical Summaries
 
-#Age
- 
-# Avg Drinks Per Week
- 
-# Weekly Minutes Moderate Exercise
- 
-# BMI
- 
- 
-##2. Descriptive Packages in R
+#runs summary of variables in the data set
+summary(rel.data)
+
+#stores results in a new name
+summary.data <- summary(rel.data) 
+
+#loads current packages 
+(.packages()) 
+
+## Age Summary
+#converts V5 to numerics 
+rel.data$V5 <- as.numeric(as.character(rel.data$V5))
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V5) 
+
+#calculates mean on V5
+mean(rel.data$V5, na.rm = TRUE) 
+
+#calculates sd of V5
+sd(rel.data$V5, na.rm = TRUE) 
+
+#calculates variance of V5
+var(rel.data$V5, na.rm = TRUE) 
+
+## AvgDrinksPerWeek Summary
+#Converts data to numeric format.
+rel.data$V17 <- as.numeric(rel.data$V14)
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V17) 
+
+#calculates mean on V17
+mean(rel.data$V17, na.rm = TRUE)
+
+#calculates sd of V17
+sd(rel.data$V17, na.rm = TRUE) 
+
+#calculates variance of V17
+var(rel.data$V17, na.rm = TRUE) 
 
 
-##3 Writing Functions
-my_summary_func <- 
+##WeeklyMinutesModerateExercise Summary
+#Converts data to numeric format.
+rel.data$V16 <- as.numeric(rel.data$V16)
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V16) 
+
+#calculates mean on V16
+mean(rel.data$V16, na.rm = TRUE) 
+
+#calculates sd of V16
+sd(rel.data$V16, na.rm = TRUE) 
+
+#calculates variance of V16
+var(rel.data$V16, na.rm = TRUE) 
+
+
+## BMI Summary
+#Converts data to numeric format.
+rel.data$V14 <- as.numeric(rel.data$V14)
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V14) 
+
+#calculates mean on V14
+mean(rel.data$V14, na.rm = TRUE)
+
+#calculates sd of V14
+sd(rel.data$V14, na.rm = TRUE) 
+
+#calculates variance of V14
+var(rel.data$V14, na.rm = TRUE) 
+
+
+#downloads the dplyr package
+install.packages("dplyr") 
+
+#loads the dyplr package 
+library(dplyr) 
+
+#prints our team dataset
+rel.data 
+
+#separates smoking status from dataset
+mutate(V5 = as.numeric(as.character(V5))) %>% #creates variables for V5 numeric conversion
+group_by(SmokingStatus) %>% 
+
+#creates summary stats that give the same output as B1
+summarise(mean_V5 = mean(V5, na.rm = TRUE),
+          sd_V5   = sd(V5, na.rm = TRUE),
+          var_V5  = var(V5, na.rm = TRUE),
+          n       = sum(!is.na(V5)))
+
+#installs the skimr package
+install.packages("skimr") 
+
+#loads skimr package
+library("skimr") 
+
+#outputs a statistical summary of data set 
+skim(rel.data) 
+
+#outputs grouped summary
+my_summary_func 
+ 
 
 
 ## Day 4 Univariate Visualization
@@ -196,119 +301,4 @@ my_visual_func_I(HINTSData_2020_clean)
 ```         
 > my_visual_func_II(HINTSData_2020_clean)
 ```
-#runs summary of variables in the data set
-summary(rel.data)
 
-#stores results in a new name
-summary.data <- summary(rel.data) 
-
-#loads current packages 
-(.packages()) 
-
-## Age Summary
-#converts V5 to numerics 
-rel.data$V5 <- as.numeric(as.character(rel.data$V5))
-
-#structures our previous data 
-str(rel.data) 
-
-#see existing values
-unique(rel.data$V5) 
-
-#calculates mean on V5
-mean(rel.data$V5, na.rm = TRUE) 
-
-#calculates sd of V5
-sd(rel.data$V5, na.rm = TRUE) 
-
-#calculates variance of V5
-var(rel.data$V5, na.rm = TRUE) 
-
-
-##WeeklyMinutesModerateExercise Summary
-#Converts data to numeric format.
-rel.data$V16 <- as.numeric(rel.data$V16)
-
-#structures our previous data 
-str(rel.data) 
-
-#see existing values
-unique(rel.data$V16) 
-
-#calculates mean on V16
-mean(rel.data$V16, na.rm = TRUE) 
-
-#calculates sd of V16
-sd(rel.data$V16, na.rm = TRUE) 
-
-#calculates variance of V16
-var(rel.data$V16, na.rm = TRUE) 
-
-## BMI Summary
-#Converts data to numeric format.
-rel.data$V14 <- as.numeric(rel.data$V14)
-
-#structures our previous data 
-str(rel.data) 
-
-#see existing values
-unique(rel.data$V14) 
-
-#calculates mean on V14
-mean(rel.data$V14, na.rm = TRUE)
-
-#calculates sd of V14
-sd(rel.data$V14, na.rm = TRUE) 
-
-#calculates variance of V14
-var(rel.data$V14, na.rm = TRUE) 
-
-## AvgDrinksPerWeek Summary
-#Converts data to numeric format.
-rel.data$V17 <- as.numeric(rel.data$V14)
-
-#structures our previous data 
-str(rel.data) 
-
-#see existing values
-unique(rel.data$V17) 
-
-#calculates mean on V17
-mean(rel.data$V17, na.rm = TRUE)
-
-#calculates sd of V17
-sd(rel.data$V17, na.rm = TRUE) 
-
-#calculates variance of V17
-var(rel.data$V17, na.rm = TRUE) 
-
-#downloads the dplyr package
-install.packages("dplyr") 
-
-#loads the dyplr package 
-library(dplyr) 
-
-#prints our team dataset
-rel.data 
-
-#separates smoking status from dataset
-mutate(V5 = as.numeric(as.character(V5))) %>% #creates variables for V5 numeric conversion
-group_by(SmokingStatus) %>% 
-
-#creates summary stats that give the same output as B1
-summarise(mean_V5 = mean(V5, na.rm = TRUE),
-          sd_V5   = sd(V5, na.rm = TRUE),
-          var_V5  = var(V5, na.rm = TRUE),
-          n       = sum(!is.na(V5)))
-
-#installs the skimr package
-install.packages("skimr") 
-
-#loads skimr package
-library("skimr") 
-
-#outputs a statistical summary of data set 
-skim(rel.data) 
-
-#outputs grouped summary
-my_summary_func 
