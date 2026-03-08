@@ -39,10 +39,10 @@ ggplot(df<-HINTSData_2020_clean, aes(x = V3)) + #Assigned QualityCare (V3) to x-
   theme_classic() #Added classic theme to chart
 
 # RaceEthnicity (pie)
-ggplot(df<-HINTSData_2020_clean, aes(x = V12)) + #Assigned RaceEthnicity (V12) to x-axis of ggplot
-  geom_bar(fill = "purple4", color = "black") + #Created barchart and added purple color with black outlines
-  coord_flip() + #Flipped axis for vertical bars
-  labs(title = "RaceEthnicity Distribution", x = "RaceEthn5", y = "Count") + #Added "RaceEthnicity Distribution" title to chart, "RaceEthn5" to x-axis and "Count" to y-axis
+ggplot(df<-HINTSData_2020_clean, aes(x = "", fill = V12)) + #Assigned RaceEthnicity (V12) as categories for pie chart
+  geom_bar(width = 1, color = "black") + #Created bar chart with colored sections that will form the pie chart
+  coord_polar("y") + #Converted bar chart into pie chart using polar coordinates
+  labs(title = "RaceEthnicity Distribution", fill = "RaceEthn5") + #Added "RaceEthnicity Distribution" as title and RaceEthn5 as legend
   theme_minimal() #Added minimal theme to chart
 
 # Age (histogram)
