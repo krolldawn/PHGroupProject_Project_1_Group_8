@@ -45,45 +45,45 @@ ggplot(df<-HINTSData_2020_clean, aes(x = V12)) + #Assigned RaceEthn5 (V12) to x-
 # Age (histogram)
 df <- HINTSData_2020_clean
 
-ggplot(df, aes(x = as.numeric(V5))) + #Created ggplot for Age, where age converted to numeric
+ggplot(df, aes(x = as.numeric(V5))) + #Created ggplot for Age, where age variable converted to numeric and assigned to x-axis
   geom_histogram(bins = 20) + #Created a histogram with 20 bins
   labs(title = "Age Distribution", x = "Age", y = "Count") + #Added "Age Distribution" title to chart, "Age" to x-axis and "Count" to y-axis
-  theme_minimal()
+  theme_minimal() #Added minimal theme to chart
 
 # BMI (boxplot)
-ggplot(df, aes(y = as.numeric(V14))) + 
-  geom_boxplot() +
-  labs(title = "BMI Distribution", y = "BMI") +
-  theme_minimal()
+ggplot(df, aes(y = as.numeric(V14))) + #Created ggplot for BMI, where BMI variable converted to numeric and assigned to y-axis
+  geom_boxplot() + #Created boxplot
+  labs(title = "BMI Distribution", y = "BMI") + #Added "BMI Distribution" as title of boxplot and "BMI" to y-axis
+  theme_minimal() #Added minimal theme to chart
 
 # Part IV
   # Function for Part I
-my_visual_func_I <- function(data) {
+my_visual_func_I <- function(data) { #Created new variable my_visual_func_I for dataset
   
   # Barplot for QualityCare
-  barplot(table(HINTSData_2020_clean$V3),
-          main = "Distribution of QualityCare",
-          xlab = "QualityCare",
-          ylab = "Frequency")
+  barplot(table(HINTSData_2020_clean$V3), #Created barplot for distribution of Quality Care
+          main = "Distribution of QualityCare", #Added "Distribution of QualityCare" as title of barplot
+          xlab = "QualityCare", #Assigned Quality Care to x-axis
+          ylab = "Frequency") #Assigned Frequency to y-axis
   
   # Pie chart for RaceEthn5
-  pie(table(HINTSData_2020_clean$V12),
-      main = "Distribution of RaceEthn5")
+  pie(table(HINTSData_2020_clean$V12), #Created piechart for Race/Ethnicity
+      main = "Distribution of RaceEthn5") #Added title "Distribution of RaceEthn5" to piechart
 }
-my_visual_func_I(HINTSData_2020_clean)
+my_visual_func_I(HINTSData_2020_clean) 
 
 
     # Function for Part II
-my_visual_func_II <- function(data) {
+my_visual_func_II <- function(data) { #Created new variable my_visual_func_II for dataset
   
   # Histogram for Age
-  hist(as.numeric(data$V5),
-       main = "Distribution of Age",
-       xlab = "Age")
+  hist(as.numeric(data$V5), #Created histogram for Age, where age converted to numeric variable
+       main = "Distribution of Age", #Added "Distribution of Age" as title of histogram
+       xlab = "Age") #Assigned Age to x-axis
   
   # Boxplot for BMI
-  boxplot(as.numeric(data$V14),
-          main = "Distribution of BMI",
-          ylab = "BMI")
+  boxplot(as.numeric(data$V14), #Created boxplot for BMI, where BMI converted to numeric variable
+          main = "Distribution of BMI", #Added "Distribution of BMI" as title for boxplot
+          ylab = "BMI") #Assigned BMI to y-axis
 }
-my_visual_func_II(HINTSData_2020_clean)
+my_visual_func_II(HINTSData_2020_clean) #Produced the Age histogram and BMI boxplot
