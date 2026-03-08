@@ -263,7 +263,7 @@ sd(rel.data$V14, na.rm = TRUE)
 #calculates variance of V14
 var(rel.data$V14, na.rm = TRUE) 
 
-##AvgDrinksPerWeek Summary
+## AvgDrinksPerWeek Summary
 #Converts data to numeric format.
 rel.data$V17 <- as.numeric(rel.data$V14)
 
