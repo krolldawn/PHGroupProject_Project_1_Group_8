@@ -225,24 +225,24 @@ sd(rel.data$V5, na.rm = TRUE)
 var(rel.data$V5, na.rm = TRUE) 
 
 
-##Average Drinks Per Week Summary
+##WeeklyMinutesModerateExercise Summary
 #Converts data to numeric format.
-rel.data$V17 <- as.numeric(rel.data$V17)
+rel.data$V16 <- as.numeric(rel.data$V16)
 
 #structures our previous data 
 str(rel.data) 
 
 #see existing values
-unique(rel.data$V17) 
+unique(rel.data$V16) 
 
-#calculates mean on V17
-mean(rel.data$V17, na.rm = TRUE) 
+#calculates mean on V16
+mean(rel.data$V16, na.rm = TRUE) 
 
-#calculates sd of V17
-sd(rel.data$V17, na.rm = TRUE) 
+#calculates sd of V16
+sd(rel.data$V16, na.rm = TRUE) 
 
-#calculates variance of V17
-var(rel.data$V17, na.rm = TRUE) 
+#calculates variance of V16
+var(rel.data$V16, na.rm = TRUE) 
 
 ## BMI Summary
 #Converts data to numeric format.
