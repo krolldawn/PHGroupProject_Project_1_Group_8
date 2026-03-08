@@ -263,6 +263,24 @@ sd(rel.data$V14, na.rm = TRUE)
 #calculates variance of V14
 var(rel.data$V14, na.rm = TRUE) 
 
+#AvgDrinksPerWeek Summary
+#Converts data to numeric format.
+rel.data$V17 <- as.numeric(rel.data$V14)
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V17) 
+
+#calculates mean on V17
+mean(rel.data$V17, na.rm = TRUE)
+
+#calculates sd of V17
+sd(rel.data$V17, na.rm = TRUE) 
+
+#calculates variance of V17
+var(rel.data$V17, na.rm = TRUE) 
 
 #downloads the dplyr package
 install.packages("dplyr") 
