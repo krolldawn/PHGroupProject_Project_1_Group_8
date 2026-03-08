@@ -36,11 +36,11 @@ ggplot(df<-HINTSData_2020_clean, aes(x = V3)) + #Assigned QualityCare (V3) to x-
   labs(title = "QualityCare Distribution", x = "QualityCare", y = "Count")+ #Added "QualityCare Distribution" title to chart, "QualityCare" to x-axis and "Count" to y-axis
   theme_classic() #Added classic theme to chart
 
-# RaceEthn5 (pie)
-ggplot(df<-HINTSData_2020_clean, aes(x = V12)) + #Assigned RaceEthn5 (V12) to x-axis of ggplot
+# RaceEthnicity (pie)
+ggplot(df<-HINTSData_2020_clean, aes(x = V12)) + #Assigned RaceEthnicity (V12) to x-axis of ggplot
   geom_bar() + #Created barchart
   coord_flip() + #Flipped axis for vertical bars
-  labs(title = "RaceEthn5 Distribution", x = "RaceEthn5", y = "Count") + #Added "RaceEthn5 Distribution" title to chart, "RaceEthn5" to x-axis and "Count" to y-axis
+  labs(title = "RaceEthnicity Distribution", x = "RaceEthn5", y = "Count") + #Added "RaceEthnicity Distribution" title to chart, "RaceEthn5" to x-axis and "Count" to y-axis
   theme_minimal() #Added minimal theme to chart
 
 # Age (histogram)
@@ -67,9 +67,9 @@ my_visual_func_I <- function(data) { #Created new variable my_visual_func_I for 
           xlab = "QualityCare", #Assigned Quality Care to x-axis
           ylab = "Frequency") #Assigned Frequency to y-axis
   
-  # Pie chart for RaceEthn5
+  # Pie chart for RaceEthnicity
   pie(table(HINTSData_2020_clean$V12), #Created piechart for Race/Ethnicity
-      main = "Distribution of RaceEthn5") #Added title "Distribution of RaceEthn5" to piechart
+      main = "Distribution of RaceEthnicity") #Added title "Distribution of RaceEthn5" to piechart
 }
 my_visual_func_I(HINTSData_2020_clean) 
 
