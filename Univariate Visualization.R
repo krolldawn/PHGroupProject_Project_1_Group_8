@@ -34,13 +34,13 @@ df<-HINTSData_2020_clean #Assigned df name to dataset
 
 # QualityCare (bar)
 ggplot(df<-HINTSData_2020_clean, aes(x = V3)) + #Assigned QualityCare (V3) to x-axis of ggplot
-  geom_bar() + #Created barchart
+  geom_bar(fill = "purple4", color = "black") + #Created barchart and added purple color with black outlines
   labs(title = "QualityCare Distribution", x = "QualityCare", y = "Count")+ #Added "QualityCare Distribution" title to chart, "QualityCare" to x-axis and "Count" to y-axis
   theme_classic() #Added classic theme to chart
 
 # RaceEthnicity (pie)
 ggplot(df<-HINTSData_2020_clean, aes(x = V12)) + #Assigned RaceEthnicity (V12) to x-axis of ggplot
-  geom_bar() + #Created barchart
+  geom_bar(fill = "purple4", color = "black") + #Created barchart and added purple color with black outlines
   coord_flip() + #Flipped axis for vertical bars
   labs(title = "RaceEthnicity Distribution", x = "RaceEthn5", y = "Count") + #Added "RaceEthnicity Distribution" title to chart, "RaceEthn5" to x-axis and "Count" to y-axis
   theme_minimal() #Added minimal theme to chart
