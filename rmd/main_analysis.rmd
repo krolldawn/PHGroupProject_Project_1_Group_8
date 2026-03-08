@@ -39,6 +39,9 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 rel.data <- HINTSData_2020_clean[, c(5,17,16,14,3,6,15,12)] 
 #created subset of relevant data only
 
+rel.data
+#Runs subset data
+
 ## Day 3 Descriptive Analysis & Function Writing
 
 # B Descriptive Analysis
@@ -137,7 +140,7 @@ my_visual_func_I <- function(data) { #Created new variable my_visual_func_I for 
 my_visual_func_I(HINTSData_2020_clean) 
 
 
-    # Function for Part II
+  # Function for Part II
 my_visual_func_II <- function(data) { #Created new variable my_visual_func_II for dataset
   
   # Histogram for Age
@@ -194,7 +197,7 @@ my_visual_func_I(HINTSData_2020_clean)
 > my_visual_func_II(HINTSData_2020_clean)
 ```
 #runs summary of variables in the data set
-summary(rel.data) 
+summary(rel.data)
 
 #stores results in a new name
 summary.data <- summary(rel.data) 
@@ -202,8 +205,9 @@ summary.data <- summary(rel.data)
 #loads current packages 
 (.packages()) 
 
+## Age Summary
 #converts V5 to numerics 
-rel.data$V5 <- as.numeric(as.character(rel.data$V5)) 
+rel.data$V5 <- as.numeric(as.character(rel.data$V5))
 
 #structures our previous data 
 str(rel.data) 
@@ -219,6 +223,46 @@ sd(rel.data$V5, na.rm = TRUE)
 
 #calculates variance of V5
 var(rel.data$V5, na.rm = TRUE) 
+
+
+##Average Drinks Per Week Summary
+#Converts data to numeric format.
+rel.data$V17 <- as.numeric(rel.data$V17)
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V17) 
+
+#calculates mean on V17
+mean(rel.data$V17, na.rm = TRUE) 
+
+#calculates sd of V17
+sd(rel.data$V17, na.rm = TRUE) 
+
+#calculates variance of V17
+var(rel.data$V17, na.rm = TRUE) 
+
+## BMI Summary
+#Converts data to numeric format.
+rel.data$V14 <- as.numeric(rel.data$V14)
+
+#structures our previous data 
+str(rel.data) 
+
+#see existing values
+unique(rel.data$V14) 
+
+#calculates mean on V14
+mean(rel.data$V14, na.rm = TRUE)
+
+#calculates sd of V14
+sd(rel.data$V14, na.rm = TRUE) 
+
+#calculates variance of V14
+var(rel.data$V14, na.rm = TRUE) 
+
 
 #downloads the dplyr package
 install.packages("dplyr") 
