@@ -75,15 +75,15 @@ my_visual_func_I(HINTSData_2020_clean)
 
 
     # Function for Part II
-my_visual_func_II <- function(data) { #Created new variable my_visual_func_II for dataset
+my_visual_func_II <- function(HINTSData_2020_clean) { #Created new variable my_visual_func_II for dataset
   
   # Histogram for Age
-  hist(as.numeric(data$V5), #Created histogram for Age, where age converted to numeric variable
+  hist(as.numeric(HINTSData_2020_clean$V5), #Created histogram for Age, where age converted to numeric variable
        main = "Distribution of Age", #Added "Distribution of Age" as title of histogram
        xlab = "Age") #Assigned Age to x-axis
   
   # Boxplot for BMI
-  boxplot(as.numeric(data$V14), #Created boxplot for BMI, where BMI converted to numeric variable
+  boxplot(as.numeric(HINTSData_2020_clean$V14), #Created boxplot for BMI, where BMI converted to numeric variable
           main = "Distribution of BMI", #Added "Distribution of BMI" as title for boxplot
           ylab = "BMI") #Assigned BMI to y-axis
 }
