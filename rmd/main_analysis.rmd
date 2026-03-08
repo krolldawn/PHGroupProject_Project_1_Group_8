@@ -36,7 +36,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 #imported HINTSData into R
 
-rel.data \<- HINTSData_2020_clean[, c(5,17,16,14,3,6,15,12)] #created subset of relevant data only
+rel.data <- HINTSData_2020_clean[, c(5,17,16,14,3,6,15,12)] #created subset of relevant data only
 
 ## Day 3 Descriptive Analysis & Function Writing
 
@@ -44,7 +44,21 @@ rel.data \<- HINTSData_2020_clean[, c(5,17,16,14,3,6,15,12)] #created subset of 
 
 ## 1. Statistical Summaries
 
-## Statistical Summaries: Age
+#Age
+ 
+# Avg Drinks Per Week
+ 
+# Weekly Minutes Moderate Exercise
+ 
+# BMI
+ 
+ 
+##2. Descriptive Packages in R
+
+
+##3 Writing Functions
+my_summary_func <- 
+
 
 ## Day 4 Univariate Visualization
 
